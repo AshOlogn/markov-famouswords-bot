@@ -63,12 +63,16 @@ def main():
   #default values
   n = 5 #history length (words)
   output_length = 300 #output text length
+  monitor_subreddit = 'testingground4bots'
   
   #gather command line arguments (if present)
   args_list = sys.argv
-  if len(args_list) == 3:
-    n = int(args_list[1])
-    output_length = int(args_list[2])
+  if len(args_list) == 2:
+    monitor_subreddit = args_list[1]
+  elif len(args_list) == 3:
+    monitor_subreddit = args_list[1]
+    n = int(args_list[2])
+    output_length = int(args_list[3])
   elif len(args_list) != 1:
     print("Incorrect number of command line arguments\nAcceptable args: <Markov history length> <Output length (words)>")
     sys.exit(1)
@@ -89,7 +93,7 @@ def main():
   for person in people:
     hashmaps[person] = create_markov_table(person, n)
   
-  subreddit = bot.subreddit('testingground4bots')
+  subreddit = bot.subreddit(monitor_subreddit)
   comments = subreddit.stream.comments()
   
   #for all comments with trigger word, reply with random text
