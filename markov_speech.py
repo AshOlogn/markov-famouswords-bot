@@ -85,9 +85,6 @@ def main():
       if person[0:2] != '//':
         people.append(person.strip())
   
-  print (people)
-  sys.exit(0)
-  
   bot = praw.Reddit(client_id='',
                        client_secret= '',
                        password= '',
