@@ -80,9 +80,14 @@ def main():
   #gather list of people to generate text for
   people = []
   with open('_people.txt') as f:
-    for person in f.read().split():
-      people.append(person)
-      
+    for person in f.readlines():
+      #exclude people that are "commented out"
+      if person[0:2] != '//':
+        people.append(person.strip())
+  
+  print (people)
+  sys.exit(0)
+  
   bot = praw.Reddit(client_id='',
                        client_secret= '',
                        password= '',
