@@ -1,5 +1,5 @@
 # markov-famouswords-bot
-This is a Reddit bot that uses Markov chains to randomly generate text resembling speeches/works by significant figures in response to "trigger" words in comments.
+This is a Reddit bot that uses Markov chains to randomly generate text resembling speeches/works by significant figures in response to "trigger" words in comments. It is possible for you to add text from other significant figures of your choice to make this bot your own.
 
 ## Using the Bot
 To trigger the bot's text generation, type !<person's name> somewhere in a comment on the subreddit that the bot is monitoring. For example, to trigger a response using Abraham Lincoln's text, write a comment containing ``!lincoln`` in the subreddit being monitored by the bot.
@@ -9,7 +9,6 @@ The following people are already supported by the bot (but you can add more):
 * Winston Churchill (``!churchill``)
 * Abraham Lincoln (``!lincoln``)
 * Karl Marx (``!marx``)
-* Jordan Peterson (``!jordanp``)
 
 ## Running the Bot
 Before you run the bot, you have to first register it on Reddit's website (https://www.reddit.com/prefs/apps/). Then type in the personal use script in the field ``client_id``, the secret id in ``client_secret``, a descriptive name in ``user_agent``, and your Reddit username and password in the appropriate fields in the blank spaces found in the ``main`` function of the Python script.
